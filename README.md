@@ -1,72 +1,76 @@
-# Machine Learning for Data Classification and Clustering
+# ML Data Explorer: Classification & Clustering Web App
 
-## Project Overview
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
 
-This Python project utilizes Streamlit to create an interactive web application for performing both supervised and unsupervised machine learning tasks on user-uploaded CSV or TXT datasets. The application offers two main functionalities:
+An interactive web application for performing supervised classification and unsupervised clustering on tabular data, built with Python and Streamlit.
 
-1. **Supervised Learning (Random Forest Classifier):** Users can upload a labeled dataset and specify the maximum depth parameter for the Random Forest Classifier. The application then trains the classifier, evaluates its performance, and displays metrics such as accuracy, precision, recall, and F1 score.
+## Features
 
-2. **Unsupervised Learning (Hierarchical Clustering):** Users can upload an unlabeled dataset and determine the number of clusters for Hierarchical Clustering. The application performs clustering, calculates the silhouette score, and presents the Calinski-Harabasz index.
+- **Dual ML Functionality**:
+  - ✅ Supervised Learning: Random Forest Classifier
+  - ✅ Unsupervised Learning: Hierarchical Clustering
+- **Interactive UI**:
+  - File upload for CSV/TXT datasets
+  - Adjustable parameters via sliders
+- **Comprehensive Evaluation**:
+  - Classification metrics: Accuracy, Precision, Recall, F1-score
+  - Clustering metrics: Silhouette Score, Calinski-Harabasz Index
 
-## Dependencies
+## Installation
 
-Before running the project, ensure you have the following Python libraries installed:
+1. Clone the repository:
+   ```bash
+   git clone [your-repo-url]
+   cd [repo-name]
+   ```
+2. Install the required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-- `numpy`
-- `pandas`
-- `streamlit`
-- `scikit-learn`
+## Usage
 
-You can install these libraries using pip:
+1. Run the Streamlit app:
+   ```bash
+   streamlit run app.py
+   ```
+2. In the web interface:
 
-```bash
-pip install numpy pandas streamlit scikit-learn
+    - Upload your dataset (CSV or TXT format)
+
+    - Adjust parameters using the sidebar sliders:
+
+        - Max Depth (for Random Forest)
+
+        - Number of Clusters (for Hierarchical Clustering)
+
+    - View evaluation metrics in the results table
+
+## Code Structure
+```plaintext
+    app.py
+    ├── perform_ml(df, max_d, n_clu)
+    │   ├── Supervised Learning (RandomForestClassifier)
+    │   └── Unsupervised Learning (AgglomerativeClustering)
+    └── app()
+        ├── File upload handler
+        ├── Parameter sliders
+        └── Results display
 ```
 
-## How to Use
+## Example Dataset
 
-Follow these steps to use the application:
-
-1. Run the script by executing `streamlit run script_name.py` in your terminal.
-
-2. Access the web application through your web browser.
-
-3. Upload a dataset in CSV or TXT format. The application automatically detects the format based on the file extension.
-
-4. Adjust the machine learning parameters using sliders:
-   - For supervised learning, set the maximum depth for the Random Forest Classifier.
-   - For unsupervised learning, determine the number of clusters for Hierarchical Clustering.
-
-5. Click the "Run Machine Learning" button to start the selected machine learning process.
-
-6. The application displays evaluation results, including accuracy, precision, recall, F1 score, silhouette score, and the Calinski-Harabasz index.
-
-## Project Structure
-
-The project comprises the following key components:
-
-- `perform_ml()`: A function that performs both supervised and unsupervised machine learning tasks, including training a Random Forest Classifier and conducting Hierarchical Clustering.
-
-- `app()`: The Streamlit application function that creates the user interface, handles file uploads, and presents evaluation results.
-
-- File uploader: Users can upload datasets in CSV or TXT format.
-
-- Parameter sliders: Sliders allow users to customize machine learning parameters.
-
-- Evaluation results table: Displays metrics and scores from the machine learning process.
+For best results, provide datasets with:
+- Supervised Learning: Labeled data (features + target variable in last column)
+- Unsupervised Learning: Feature columns only
 
 ## Future Enhancements
 
-This project serves as a versatile foundation for data classification and clustering tasks. Future enhancements could include:
+- Add more algorithms (K-Means, SVM, etc.)
 
-- Support for additional machine learning algorithms, allowing users to choose different classifiers or clustering methods.
+- Visualizations (Confusion matrix, Dendrogram)
 
-- Visualizations: Integration of data visualization tools to provide insights into the uploaded datasets and the results of machine learning processes.
+- Data preprocessing options
 
-- Improved user experience: Enhance the user interface with additional features and user-friendly design elements.
-
-- Deployment: Deploy the application to a web server for broader accessibility.
-
-- Error handling: Implement error handling for cases where users upload incompatible or erroneous datasets.
-
-Feel free to explore and expand upon this project to make it even more powerful and user-friendly for various machine learning tasks.
+- Export results functionality
