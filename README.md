@@ -37,8 +37,8 @@ Results are displayed side-by-side in a table. Use the sidebar sliders to tune p
 ```bash
 git clone https://github.com/NickLitharis/streamlit-ml
 cd streamlit-ml
-pip install -r requirements.txt
-streamlit run ml.py
+uv sync
+uv run streamlit run ml.py
 ```
 
 ---

@@ -1,0 +1,26 @@
+[project]
+name = "streamlit-ml"
+version = "0.1.0"
+description = "Streamlit app for exploring a CSV - Random Forest classification beside agglomerative clustering"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = [
+    "pandas>=2.2.0",
+    "scikit-learn>=1.5.0",
+    "streamlit>=1.35.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+]
+
+# Application, not a distributable package: nothing to build or install.
+[tool.uv]
+package = false
+
+# Bare `pytest` does not put the repository root on sys.path, so `import ml` fails.
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
