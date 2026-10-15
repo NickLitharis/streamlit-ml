@@ -1,5 +1,7 @@
 # ML Data Explorer
 
+[![CI](https://github.com/NickLitharis/streamlit-ml/actions/workflows/ci.yml/badge.svg)](https://github.com/NickLitharis/streamlit-ml/actions/workflows/ci.yml)
+
 Upload any CSV or TXT dataset and instantly run both supervised and unsupervised machine learning — no code required.
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?logo=python)
